@@ -1,8 +1,10 @@
 // import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 // import Functions from "./functions";
 
-import LearnFunctions from "./LearnFunctions";
+// import LearnFunctions from "./LearnFunctions";
+import { getPlaceholder } from "./UseFunctions";
 
 // function App() {
 //   const [isOnline, setisOnline] = useState(navigator.onLine);
@@ -41,10 +43,26 @@ import LearnFunctions from "./LearnFunctions";
 // export default App;
 
 const App = () => {
+  const [value, setValue] = useState("");
   return (
     <div>
       <>
-        <LearnFunctions />
+        <b>{value}</b>
+        <br />
+        <br />
+        <br />
+        <input
+          onChange={(e) => {
+            console.log("type", e.target.type);
+            setValue(getPlaceholder(e));
+          }}
+          type="email"
+          name=""
+          id=""
+        />
+        <br />
+        <br />
+        <button>Click</button>
       </>
     </div>
   );
